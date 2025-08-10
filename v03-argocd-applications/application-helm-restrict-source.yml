@@ -6,15 +6,16 @@ spec:
   destination:
     namespace: project-demo-restrict
     server: https://kubernetes.default.svc
-  project: project-demo-source-restriction
+  project: project-source-restriction
+  #  project: default
   source:
   # It's possible to override helm values through different ways such as "valueFiles", "values", "valuesObject" and "parameters". 
   # Values injections have the following order of precedence parameters > valuesObject > values > valueFiles > helm repository values.yaml Or rather
     helm:
       releaseName: saba-application-from-helm-restrict
-      valueFiles:
-        - custom-values.yaml
-    path: v03-argocd-applications/helm-restrict/nginx
-    #    repoURL: https://github.com/devopshobbies/argocd-tutorial.git
+      #      valueFiles:
+      #        - custom-values.yaml
+    path: v03-argocd-applications/helm-restrict/nginx/
+    #    repoURL: https://github.com/devopshobbies/argocd-tutorial.git   # restrcited by "project-source-restriction" project roles 
     repoURL: https://github.com/saeed-didar/argocd-tutorial.git
     targetRevision: main
