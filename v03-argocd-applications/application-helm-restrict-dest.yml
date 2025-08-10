@@ -1,12 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: application-from-helm-restrict
+  name: application-from-helm-restrict-dest
 spec:
   destination:
-    namespace: project-demo-restrict
+    namespace: dev
+    #    namespace: production
     server: https://kubernetes.default.svc
-  project: project-source-restriction
+  project: project-destination-restriction
   #  project: default
   source:
   # It's possible to override helm values through different ways such as "valueFiles", "values", "valuesObject" and "parameters". 
@@ -15,7 +16,7 @@ spec:
       releaseName: saba-application-from-helm-restrict
       #      valueFiles:
       #        - custom-values.yaml
-    path: v03-argocd-applications/helm-restrict-source/nginx/
+    path: v03-argocd-applications/helm-restrict-dest/nginx/
     #    repoURL: https://github.com/devopshobbies/argocd-tutorial.git   # restrcited by "project-source-restriction" project roles 
     repoURL: https://github.com/saeed-didar/argocd-tutorial.git
     targetRevision: main
