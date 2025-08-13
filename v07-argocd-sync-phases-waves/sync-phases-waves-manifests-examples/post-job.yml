@@ -9,15 +9,16 @@ spec:
     spec:
       containers:
         - name: mattermost-success
-          image: mattermost:final
+          image: docker.io/library/mattermost:final
+          imagePullPolicy: Never          
           command: [ "python3", "mattermost_api.py"]
           env:
           - name: message
             value: "MESSAGE FROM ARGOCD: The last sync is:  *** Sync OK ***"
           - name: url
-            value: "mattermost.local"
+            value: "192.168.209.210"
           - name: token
-            value: "ga1xw9upj78ztyqund1853iuih"
+            value: "7wqdtcf59tdr8kqyirncxkdegc"
           - name: scheme
             value: "http"
           - name: port
