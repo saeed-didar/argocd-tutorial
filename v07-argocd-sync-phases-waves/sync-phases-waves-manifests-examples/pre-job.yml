@@ -13,6 +13,6 @@ spec:
           image: curlimages/curl
           command: ["/bin/sh", "-c"]
           #          args: ["if curl -s http://myapp.local:5000 | grep -qi 'running'; then echo 'Demo Application is up and Running'; exit 0; else echo 'Demo Application is NOT accessible'; exit 1; fi"]
-          args: ["if curl -s http://192.168.209.210:5000 | grep -qi 'running'; then echo 'Demo Application is up and Running'; exit 0; else echo 'Demo Application is NOT accessible'; exit 1; fi"]
+          args: ["if curl -s 192.168.209.210:5000 | grep -qi 'running'; then echo 'Demo Application is up and Running'; exit 0; else echo 'Demo Application is NOT accessible'; exit 1; fi"]
       restartPolicy: Never
   backoffLimit: 0
