@@ -4,7 +4,7 @@ metadata:
   name: application-sync-prune-policies
 spec:
   destination:
-    namespace: default
+    namespace: stage
     server: https://kubernetes.default.svc
   project: default
   source:
@@ -18,7 +18,23 @@ spec:
     #    repoURL: https://github.com/devopshobbies/argocd-tutorial.git
     repoURL: https://github.com/saeed-didar/argocd-tutorial.git
     targetRevision: main
+#################################################### sync policies and options #################################   
   syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    - FailOnSharedResource=true
+    - PruneLast=true
+    - ApplyOutOfSyncOnly=true
+    - Replace=true
+    managedNamespaceMetadata:
+      labels: # The labels to set on the application namespace
+        any: SabaApp1
+        you: like1
+      annotations: # The annotations to set on the application namespace
+        the: SabaApp2
+        applies: like2
+        annotations: on-the-namespace-stage
     automated:
       prune: true
       selfHeal: true
+

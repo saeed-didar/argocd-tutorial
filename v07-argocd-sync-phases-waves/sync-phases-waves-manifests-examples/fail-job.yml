@@ -10,6 +10,7 @@ spec:
       containers:
         - name: mattermost-failure
           image: mattermost:final
+          imagePullPolicy: Never
           command: [ "python3", "mattermost_api.py"]
           env:
           - name: message
