@@ -4,7 +4,7 @@ metadata:
   name: application-directory-sync-phases-waves
 spec:
   destination:
-    namespace: prod
+    namespace: default
     server: https://kubernetes.default.svc
   project: default
   source:
@@ -15,7 +15,6 @@ spec:
     path: v07-argocd-sync-phases-waves/sync-phases-waves-manifests-examples
     repoURL: https://github.com/saeed-didar/argocd-tutorial.git
     targetRevision: main
-  syncPolicy:
-    syncOptions:
-    - CreateNamespace=true
-
+    #  syncPolicy:
+          #   syncOptions:
+          #    - CreateNamespace=true
