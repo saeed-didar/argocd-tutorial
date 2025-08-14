@@ -20,9 +20,9 @@ spec:
           - name: token
             value: "7wqdtcf59tdr8kqyirncxkdegc"
           - name: scheme
-            value: "http"
+            value: "https"
           - name: port
-            value: "8065"
+            value: "443"
           - name: channel_name
             value: "saba-channel"
           - name: team_name
