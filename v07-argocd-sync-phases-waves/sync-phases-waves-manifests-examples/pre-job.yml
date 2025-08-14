@@ -8,13 +8,20 @@ metadata:
 spec:
   template:
     spec:
-      hostNetwork: true
-      dnsPolicy: ClusterFirstWithHostNet
       containers:
         - name: health-check
-          image: curlimages/curl
+          image: curlimages/curl:8.5.0
           command: ["/bin/sh", "-c"]
-          #          args: ["if curl -s http://myapp.local:5000 | grep -qi 'running'; then echo 'Demo Application is up and Running'; exit 0; else echo 'Demo Application is NOT accessible'; exit 1; fi"]
-          args: ["if curl -s 192.168.209.210:5000 | grep -qi 'running'; then echo 'Demo Application is up and Running'; exit 0; else echo 'Demo Application is NOT accessible'; exit 1; fi"]
+          args:
+            - |
+              TARGET_URL="http://demo-app:5000"
+              echo "🔍 Checking service at $TARGET_URL..."
+              if curl -s --max-time 5 "$TARGET_URL" | grep -qi 'running'; then
+                echo "✅ Demo Application is UP and running"
+                exit 0
+              else
+                echo "❌ Demo Application is NOT accessible"
+                exit 1
+              fi
       restartPolicy: Never
   backoffLimit: 0
