@@ -14,7 +14,7 @@ spec:
           command: [ "python3", "mattermost_api.py"]
           env:
           - name: message
-            value: "MESSAGE FROM ARGOCD: The last sync is:  *** Sync OK ***"
+            value: "MESSAGE FROM ARGOCD: The last sync is:  *** Sync OK :) ***"
           - name: url
             value: "192.168.209.210"
           - name: token
