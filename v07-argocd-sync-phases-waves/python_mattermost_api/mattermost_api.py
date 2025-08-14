@@ -7,6 +7,7 @@ server = Driver({
     'token': environ['token'],
     'scheme': environ['scheme'],
     'port': int(environ['port'])
+    'verify': False  # <- disable SSL certificate verification
 })
 
 server.login()
