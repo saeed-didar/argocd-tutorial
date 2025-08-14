@@ -27,5 +27,7 @@ spec:
             value: "saba-channel"
           - name: team_name
             value: "saba-home"
+          - name: PYTHONHTTPSVERIFY
+            value: "0"  # <- disables SSL certificate verification
       restartPolicy: Never
   backoffLimit: 0              
