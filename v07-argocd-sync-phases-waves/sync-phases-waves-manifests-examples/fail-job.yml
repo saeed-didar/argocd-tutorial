@@ -4,6 +4,7 @@ metadata:
   name: mattermost-post-job-failure
   annotations:
     argocd.argoproj.io/hook: SyncFail
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded  #HookFailed
 spec:
   template:
     spec:
