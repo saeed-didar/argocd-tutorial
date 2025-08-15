@@ -14,7 +14,7 @@ spec:
           command: ["/bin/sh", "-c"]
           args:
             - |
-              TARGET_URL="http://demo-app:5000"
+              TARGET_URL="http://demo-app:5001"
               echo "🔍 Checking service at $TARGET_URL..."
               if curl -s --max-time 5 "$TARGET_URL" | grep -qi 'running'; then
                 echo "✅ Demo Application is UP and running"
