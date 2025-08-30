@@ -5,7 +5,7 @@ metadata:
 spec:
   destination:
     namespace: production
-    server: external-cluster
+    name: external-cluster
   project: default
   source:
     directory:
@@ -15,7 +15,3 @@ spec:
     path: v03-argocd-applications/directoryOfmanifests
     repoURL: https://github.com/saeed-didar/argocd-tutorial.git
     targetRevision: main
-  syncPolicy:
-    syncOptions:
-      - CreateNamespace=true
-
