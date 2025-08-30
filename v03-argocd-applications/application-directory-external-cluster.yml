@@ -15,3 +15,6 @@ spec:
     path: v03-argocd-applications/directoryOfmanifests
     repoURL: https://github.com/saeed-didar/argocd-tutorial.git
     targetRevision: main
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
