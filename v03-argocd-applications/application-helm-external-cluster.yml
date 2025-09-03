@@ -25,3 +25,7 @@ spec:
     #    repoURL: https://github.com/devopshobbies/argocd-tutorial.git
     repoURL: https://github.com/saeed-didar/argocd-tutorial.git
     targetRevision: main
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+
