@@ -6,7 +6,7 @@ metadata:
     argocd.argoproj.io/secret-type: cluster
 type: Opaque
 stringData:
-  name: external-cluster
+  name: external-cluster2
   server: https://192.168.209.128:6443
   config: |
     {
