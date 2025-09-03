@@ -5,7 +5,7 @@ metadata:
 spec:
   destination:
     namespace: stage
-    name: external-cluster
+    name: external-cluster2
   project: default
   source:
   # It's possible to override helm values through different ways such as "valueFiles", "values", "valuesObject" and "parameters". 
