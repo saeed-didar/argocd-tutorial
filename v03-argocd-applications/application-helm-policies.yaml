@@ -5,7 +5,8 @@ metadata:
 spec:
   destination:
     namespace: stage
-    server: https://kubernetes.default.svc
+    #    server: https://kubernetes.default.svc
+    name: external 
   project: default
   source:
   # It's possible to override helm values through different ways such as "valueFiles", "values", "valuesObject" and "parameters". 

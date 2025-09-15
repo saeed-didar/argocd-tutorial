@@ -2,11 +2,14 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: application-from-helm-restrict-dest
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io/background
 spec:
   destination:
     namespace: dev
     #    namespace: production  #namespace 'production' not  allowed destinations in project 'project-destination-restriction' roles
-    server: https://kubernetes.default.svc
+    #    server: https://kubernetes.default.svc
+    name: external
   project: project-destination-restriction
   #  project: default
   source:
@@ -20,3 +23,11 @@ spec:
     #    repoURL: https://github.com/devopshobbies/argocd-tutorial.git   # restrcited by "project-source-restriction" project roles 
     repoURL: https://github.com/saeed-didar/argocd-tutorial.git
     targetRevision: main
+  syncPolicy:
+    automated:
+      prune: true
+      allowEmpty: true
+    syncOptions:
+    - PrunePropagationPolicy=background
+
+

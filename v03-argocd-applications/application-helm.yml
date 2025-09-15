@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: application-from-scratch
+  name: application-from-scratch-helm
 spec:
   destination:
     namespace: default
@@ -20,7 +20,7 @@ spec:
         replicaCount: 5
       parameters:
         - name: "replicaCount"
-          value: "4"
+          value: "3"
     path: v03-argocd-applications/helm/nginx
     #    repoURL: https://github.com/devopshobbies/argocd-tutorial.git
     repoURL: https://github.com/saeed-didar/argocd-tutorial.git
